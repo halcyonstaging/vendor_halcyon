@@ -32,6 +32,8 @@ SOONG_CONFIG_halcyonGlobalVars += \
     camera_needs_client_info \
     camera_needs_client_info_lib \
     camera_needs_client_info_lib_oplus \
+    uses_oplus_camera \
+    uses_nothing_camera \
     disable_bluetooth_le_read_buffer_size_v2 \
     disable_bluetooth_le_set_host_feature \
     bootloader_message_offset \
@@ -69,6 +71,8 @@ SOONG_CONFIG_halcyonGlobalVars_camera_needs_client_info := $(TARGET_CAMERA_NEEDS
 SOONG_CONFIG_halcyonGlobalVars_camera_needs_client_info_lib := $(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB)
 SOONG_CONFIG_halcyonGlobalVars_camera_needs_client_info_lib_oplus := $(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB_OPLUS)
 SOONG_CONFIG_halcyonGlobalVars_camera_uses_newer_hidl_override_format := $(TARGET_CAMERA_USES_NEWER_HIDL_OVERRIDE_FORMAT)
+SOONG_CONFIG_halcyonGlobalVars_uses_oplus_camera := $(TARGET_USES_OPLUS_CAMERA)
+SOONG_CONFIG_halcyonGlobalVars_uses_nothing_camera := $(TARGET_USES_NOTHING_CAMERA)
 SOONG_CONFIG_halcyonGlobalVars_target_alternative_futex_waiters := $(TARGET_ALTERNATIVE_FUTEX_WAITERS)
 SOONG_CONFIG_halcyonGlobalVars_gralloc_handle_has_reserved_size := $(TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE)
 SOONG_CONFIG_halcyonGlobalVars_uses_egl_display_array := $(TARGET_USES_EGL_DISPLAY_ARRAY)
