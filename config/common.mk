@@ -196,4 +196,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
 
+# Include Google Apps Bundle
+$(call inherit-product-if-exists, vendor/gms/products/gms.mk)
+
 include vendor/halcyon/config/version.mk
