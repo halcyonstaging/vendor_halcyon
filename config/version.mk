@@ -1,38 +1,33 @@
-PRODUCT_VERSION_MAJOR = 20
-PRODUCT_VERSION_MINOR = 0
+#
+# Copyright (C) 2020 The conquerOS Project
+#           (C) 2023 The Halcyon Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 
-ifeq ($(LINEAGE_VERSION_APPEND_TIME_OF_DAY),true)
-    LINEAGE_BUILD_DATE := $(shell date -u +%Y%m%d_%H%M%S)
-else
-    LINEAGE_BUILD_DATE := $(shell date -u +%Y%m%d)
-endif
+HALCYON_HOST_TIME := $(shell date +"%Y%m%d-%H%M")
 
-# Set LINEAGE_BUILDTYPE from the env RELEASE_TYPE, for jenkins compat
+HALCYON_BUILD_TYPE ?= BETA
 
-ifndef LINEAGE_BUILDTYPE
-    ifdef RELEASE_TYPE
-        # Starting with "LINEAGE_" is optional
-        RELEASE_TYPE := $(shell echo $(RELEASE_TYPE) | sed -e 's|^LINEAGE_||g')
-        LINEAGE_BUILDTYPE := $(RELEASE_TYPE)
-    endif
-endif
+HALCYON_VERSION := Tithonia
+HALCYON_VERSION_NUMBER := 13.0
 
-# Filter out random types, so it'll reset to UNOFFICIAL
-ifeq ($(filter RELEASE NIGHTLY SNAPSHOT EXPERIMENTAL,$(LINEAGE_BUILDTYPE)),)
-    LINEAGE_BUILDTYPE := UNOFFICIAL
-    LINEAGE_EXTRAVERSION :=
-endif
+HALCYON_BUILD_VERSION := halcyon_$(HALCYON_BUILD)-$(HALCYON_VERSION)-$(HALCYON_HOST_TIME)-$(HALCYON_BUILD_TYPE)
+HALCYON_BUILD_NUMBER := $(HALCYON_VERSION).$(HALCYON_VERSION_NUMBER).$(HALCYON_HOST_TIME)
 
-ifeq ($(LINEAGE_BUILDTYPE), UNOFFICIAL)
-    ifneq ($(TARGET_UNOFFICIAL_BUILD_ID),)
-        LINEAGE_EXTRAVERSION := -$(TARGET_UNOFFICIAL_BUILD_ID)
-    endif
-endif
-
-LINEAGE_VERSION_SUFFIX := $(LINEAGE_BUILD_DATE)-$(LINEAGE_BUILDTYPE)$(LINEAGE_EXTRAVERSION)-$(LINEAGE_BUILD)
-
-# Internal version
-LINEAGE_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(LINEAGE_VERSION_SUFFIX)
-
-# Display version
-LINEAGE_DISPLAY_VERSION := $(PRODUCT_VERSION_MAJOR)-$(LINEAGE_VERSION_SUFFIX)
+# Halcyon Build information properties
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+   ro.halcyon.version=$(HALCYON_VERSION) \
+   ro.halcyon.build.version=$(HALCYON_BUILD_VERSION) \
+   ro.halcyon.build.number=$(HALCYON_BUILD_NUMBER) \
+   ro.halcyon.build.type=$(HALCYON_BUILD_TYPE)
