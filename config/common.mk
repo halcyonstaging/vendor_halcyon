@@ -189,6 +189,10 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/halcyon/overlay/common
 PRODUCT_PACKAGES += \
     NetworkStackOverlay
 
+# Apps
+PRODUCT_PACKAGES += \
+    Aperture \
+
 # Enable support of one-handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
