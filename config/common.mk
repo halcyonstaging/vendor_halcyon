@@ -197,3 +197,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 $(call inherit-product-if-exists, vendor/gms/products/gms.mk)
 
 include vendor/halcyon/config/version.mk
+
+# Include halcyonUI
+include vendor/halcyonui/config.mk
