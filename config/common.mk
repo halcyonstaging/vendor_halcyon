@@ -184,7 +184,9 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.systemuicompilerfilter=speed
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/halcyon/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += \
+    vendor/halcyon/overlay/common \
+    vendor/halcyon/overlay/no-rro
 
 PRODUCT_PACKAGES += \
     NetworkStackOverlay
