@@ -35,6 +35,7 @@ SOONG_CONFIG_halcyonGlobalVars += \
     camera_needs_miui_camera_mode_support \
     camera_needs_camera_needs_depth_sensor_override \
     uses_oplus_camera \
+    uses_oppo_camera \
     uses_nothing_camera \
     disable_bluetooth_le_read_buffer_size_v2 \
     disable_bluetooth_le_set_host_feature \
@@ -78,6 +79,7 @@ SOONG_CONFIG_halcyonGlobalVars_camera_needs_camera_needs_depth_sensor_override :
 SOONG_CONFIG_halcyonGlobalVars_include_miui_camera := $(TARGET_INCLUDES_MIUI_CAMERA)
 SOONG_CONFIG_halcyonGlobalVars_camera_uses_newer_hidl_override_format := $(TARGET_CAMERA_USES_NEWER_HIDL_OVERRIDE_FORMAT)
 SOONG_CONFIG_halcyonGlobalVars_uses_oplus_camera := $(TARGET_USES_OPLUS_CAMERA)
+SOONG_CONFIG_halcyonGlobalVars_uses_oppo_camera := $(TARGET_USES_OPPO_CAMERA)
 SOONG_CONFIG_halcyonGlobalVars_uses_nothing_camera := $(TARGET_USES_NOTHING_CAMERA)
 SOONG_CONFIG_halcyonGlobalVars_target_alternative_futex_waiters := $(TARGET_ALTERNATIVE_FUTEX_WAITERS)
 SOONG_CONFIG_halcyonGlobalVars_gralloc_handle_has_reserved_size := $(TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE)
