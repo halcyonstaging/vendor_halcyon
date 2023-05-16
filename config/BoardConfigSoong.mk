@@ -40,6 +40,7 @@ SOONG_CONFIG_halcyonGlobalVars += \
     disable_bluetooth_le_read_buffer_size_v2 \
     disable_bluetooth_le_set_host_feature \
     bootloader_message_offset \
+    gralloc_handle_has_custom_content_md_reserved_size \
     gralloc_handle_has_reserved_size \
     needs_camera_boottime \
     camera_uses_newer_hidl_override_format \
@@ -72,6 +73,7 @@ SOONG_CONFIG_halcyonQcomVars += \
 endif
 
 # Soong bool variables
+SOONG_CONFIG_halcyonGlobalVars_gralloc_handle_has_custom_content_md_reserved_size := $(TARGET_GRALLOC_HANDLE_HAS_CUSTOM_CONTENT_MD_RESERVED_SIZE)
 SOONG_CONFIG_halcyonGlobalVars_camera_needs_client_info := $(TARGET_CAMERA_NEEDS_CLIENT_INFO)
 SOONG_CONFIG_halcyonGlobalVars_camera_needs_client_info_lib := $(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB)
 SOONG_CONFIG_halcyonGlobalVars_camera_needs_client_info_lib_oplus := $(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB_OPLUS)
@@ -94,6 +96,7 @@ SOONG_CONFIG_halcyonGlobalVars_uses_legacy_fd_fbdev := $(TARGET_USES_LEGACY_FD_F
 # Set default values
 BOOTLOADER_MESSAGE_OFFSET ?= 0
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS ?= 0
+TARGET_GRALLOC_HANDLE_HAS_CUSTOM_CONTENT_MD_RESERVED_SIZE ?= false
 TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE ?= false
 TARGET_INCLUDES_MIUI_CAMERA ?= false
 TARGET_INIT_VENDOR_LIB ?= vendor_init
