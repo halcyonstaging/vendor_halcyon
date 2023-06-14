@@ -110,6 +110,27 @@ camera_uses_newer_hidl_override_format {
     },
 }
 
+// Target platform agnostic config modules
+soong_config_module_type {
+    name: "aapt_version_code",
+    module_type: "java_defaults",
+    config_namespace: "halcyonGlobalVars",
+    value_variables: ["aapt_version_code"],
+    properties: ["aaptflags"],
+}
+
+aapt_version_code {
+    name: "aapt_version_code_defaults",
+    soong_config_variables: {
+        aapt_version_code: {
+            aaptflags: [
+                "--version-code",
+                "%s",
+            ],
+        },
+    },
+}
+
 soong_config_module_type {
     name: "gralloc_10_usage_bits",
     module_type: "cc_defaults",
