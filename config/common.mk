@@ -215,3 +215,6 @@ include vendor/halcyon/config/version.mk
 
 # Include halcyonUI
 include vendor/halcyonui/config.mk
+
+# Include Halcyon Private Extras if available
+$(call inherit-product-if-exists, vendor/halcyon-priv/config.mk)
