@@ -208,6 +208,20 @@ endif
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
 
+# ADB Secure
+ifeq ($(TARGET_BUILD_VARIANT),eng)
+    # Disable ADB authentication
+    PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
+    PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.usb.config=adb
+else
+    # Enable ADB authentication
+    PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
+    PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.usb.config=none
+
+    # Disable extra StrictMode features on all non-engineering builds
+    PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.strictmode.disable=true
+endif
+
 # Include Google Apps Bundle
 $(call inherit-product-if-exists, vendor/gms/products/gms.mk)
 
