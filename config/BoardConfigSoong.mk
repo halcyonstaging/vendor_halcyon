@@ -46,6 +46,7 @@ SOONG_CONFIG_halcyonGlobalVars += \
     needs_camera_boottime \
     camera_uses_newer_hidl_override_format \
     target_alternative_futex_waiters \
+    target_camera_package_name \
     target_health_charging_control_charging_enabled \
     target_health_charging_control_charging_disabled \
     target_health_charging_control_deadline_path \
@@ -139,6 +140,7 @@ TARGET_USES_OPLUS_CAMERATARGET_USES_OPLUS_CAMERA ?= false
 # Soong value variables
 SOONG_CONFIG_halcyonGlobalVars_additional_gralloc_10_usage_bits := $(TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS)
 SOONG_CONFIG_halcyonGlobalVars_bootloader_message_offset := $(BOOTLOADER_MESSAGE_OFFSET)
+SOONG_CONFIG_halcyonGlobalVars_target_camera_package_name := $(TARGET_CAMERA_PACKAGE_NAME)
 SOONG_CONFIG_halcyonGlobalVars_disable_bluetooth_le_read_buffer_size_v2 := $(TARGET_DISABLE_BLUETOOTH_LE_READ_BUFFER_SIZE_V2)
 SOONG_CONFIG_halcyonGlobalVars_disable_bluetooth_le_set_host_feature := $(TARGET_DISABLE_BLUETOOTH_LE_SET_HOST_FEATURE)
 SOONG_CONFIG_halcyonGlobalVars_target_init_vendor_lib := $(TARGET_INIT_VENDOR_LIB)
