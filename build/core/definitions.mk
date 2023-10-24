@@ -7,6 +7,3 @@ endef
 
 # Include board/platform macros
 include vendor/halcyon/build/core/utils.mk
-
-# Include vendor platform definitions
-include vendor/halcyon/build/core/vendor/*.mk
