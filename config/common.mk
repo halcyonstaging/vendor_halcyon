@@ -225,7 +225,7 @@ else
 endif
 
 # Include Google Apps Bundle
-#$(call inherit-product-if-exists, vendor/gms/products/gms.mk)
+$(call inherit-product-if-exists, vendor/gms/products/gms.mk)
 
 include vendor/halcyon/config/version.mk
 
