@@ -1,3 +1,5 @@
+export SKIP_ABI_CHECKS=true
+
 function __print_halcyon_functions_help() {
 cat <<EOF
 Additional Halcyon functions:
