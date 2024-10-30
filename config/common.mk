@@ -199,6 +199,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Aperture \
 
+# AvatarPicker
+PRODUCT_PACKAGES += \
+    AvatarPicker
+
 # Face Unlock
 PRODUCT_PACKAGES += \
     FaceUnlock
