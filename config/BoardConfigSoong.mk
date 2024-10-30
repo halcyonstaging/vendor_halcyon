@@ -56,7 +56,6 @@ SOONG_CONFIG_halcyonGlobalVars += \
     target_health_charging_control_supports_toggle \
     target_init_vendor_lib \
     target_inputdispatcher_skip_event_key \
-    target_ld_shim_libs \
     target_power_libperfmgr_mode_extension_lib \
     target_surfaceflinger_udfps_lib \
     target_trust_usb_control_path \
@@ -143,7 +142,6 @@ SOONG_CONFIG_halcyonGlobalVars_disable_bluetooth_le_set_host_feature := $(TARGET
 SOONG_CONFIG_halcyonGlobalVars_target_init_vendor_lib := $(TARGET_INIT_VENDOR_LIB)
 SOONG_CONFIG_halcyonGlobalVars_target_inputdispatcher_skip_event_key := $(TARGET_INPUTDISPATCHER_SKIP_EVENT_KEY)
 SOONG_CONFIG_halcyonGlobalVars_target_power_libperfmgr_mode_extension_lib := $(TARGET_POWER_LIBPERFMGR_MODE_EXTENSION_LIB)
-SOONG_CONFIG_halcyonGlobalVars_target_ld_shim_libs := $(subst $(space),:,$(TARGET_LD_SHIM_LIBS))
 SOONG_CONFIG_halcyonGlobalVars_target_surfaceflinger_udfps_lib := $(TARGET_SURFACEFLINGER_UDFPS_LIB)
 SOONG_CONFIG_halcyonGlobalVars_target_trust_usb_control_path := $(TARGET_TRUST_USB_CONTROL_PATH)
 SOONG_CONFIG_halcyonGlobalVars_target_trust_usb_control_enable := $(TARGET_TRUST_USB_CONTROL_ENABLE)
