@@ -46,7 +46,6 @@ SOONG_CONFIG_halcyonGlobalVars += \
     needs_camera_boottime \
     camera_uses_newer_hidl_override_format \
     target_alternative_futex_waiters \
-    target_health_charging_control_charging_path \
     target_health_charging_control_charging_enabled \
     target_health_charging_control_charging_disabled \
     target_health_charging_control_deadline_path \
@@ -64,6 +63,11 @@ SOONG_CONFIG_halcyonGlobalVars += \
     needs_oplus_tag \
     uses_legacy_fd_fbdev \
     include_miui_camera
+
+ifneq ($(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH),)
+SOONG_CONFIG_halcyonGlobalVars += \
+    target_health_charging_control_charging_path
+endif
 
 SOONG_CONFIG_NAMESPACES += halcyonNvidiaVars
 SOONG_CONFIG_halcyonNvidiaVars += \
@@ -144,7 +148,9 @@ SOONG_CONFIG_halcyonGlobalVars_target_surfaceflinger_udfps_lib := $(TARGET_SURFA
 SOONG_CONFIG_halcyonGlobalVars_target_trust_usb_control_path := $(TARGET_TRUST_USB_CONTROL_PATH)
 SOONG_CONFIG_halcyonGlobalVars_target_trust_usb_control_enable := $(TARGET_TRUST_USB_CONTROL_ENABLE)
 SOONG_CONFIG_halcyonGlobalVars_target_trust_usb_control_disable := $(TARGET_TRUST_USB_CONTROL_DISABLE)
+ifneq ($(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH),)
 SOONG_CONFIG_halcyonGlobalVars_target_health_charging_control_charging_path := $(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH)
+endif
 SOONG_CONFIG_halcyonGlobalVars_target_health_charging_control_charging_enabled := $(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_ENABLED)
 SOONG_CONFIG_halcyonGlobalVars_target_health_charging_control_charging_disabled := $(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_DISABLED)
 SOONG_CONFIG_halcyonGlobalVars_target_health_charging_control_deadline_path := $(TARGET_HEALTH_CHARGING_CONTROL_DEADLINE_PATH)
