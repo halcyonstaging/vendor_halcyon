@@ -28,7 +28,6 @@ $(foreach v,$(EXPORT_TO_SOONG),$(eval $(call addVar,$(v))))
 
 SOONG_CONFIG_NAMESPACES += halcyonGlobalVars
 SOONG_CONFIG_halcyonGlobalVars += \
-    aapt_version_code \
     additional_gralloc_10_usage_bits \
     camera_needs_client_info \
     camera_needs_client_info_lib \
@@ -134,7 +133,6 @@ TARGET_USES_NOTHING_CAMERA ?= false
 TARGET_USES_OPLUS_CAMERATARGET_USES_OPLUS_CAMERA ?= false
 
 # Soong value variables
-SOONG_CONFIG_halcyonGlobalVars_aapt_version_code := $(shell date -u +%Y%m%d)
 SOONG_CONFIG_halcyonGlobalVars_additional_gralloc_10_usage_bits := $(TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS)
 SOONG_CONFIG_halcyonGlobalVars_bootloader_message_offset := $(BOOTLOADER_MESSAGE_OFFSET)
 SOONG_CONFIG_halcyonGlobalVars_disable_bluetooth_le_read_buffer_size_v2 := $(TARGET_DISABLE_BLUETOOTH_LE_READ_BUFFER_SIZE_V2)
