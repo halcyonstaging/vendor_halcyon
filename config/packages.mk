@@ -158,3 +158,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Lineage Health
 PRODUCT_COPY_FILES += \
     vendor/halcyon/config/permissions/org.lineageos.health.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.lineageos.health.xml
+
+# ColumbusService
+ifeq ($(TARGET_SUPPORTS_QUICK_TAP),true)
+PRODUCT_PACKAGES += \
+    ColumbusService
+endif
