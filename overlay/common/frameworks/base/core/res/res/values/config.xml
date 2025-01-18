@@ -54,4 +54,7 @@
     <!-- Default SmartSpace Service provider -->
     <string name="config_defaultSmartspaceService" translatable="false">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiSmartspaceService</string>
 
+    <!-- Enable lockscreen shortcuts customization -->
+    <bool name="custom_lockscreen_shortcuts_enabled">true</bool>
+
 </resources>
