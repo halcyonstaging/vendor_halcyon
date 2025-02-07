@@ -258,11 +258,6 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/halcyon/config/permissions/org.lineageos.health.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.lineageos.health.xml
 
-# Include Google Apps Bundle
-ifneq ($(DISABLE_GMS),true)
-    $(call inherit-product-if-exists, vendor/gms/config.mk)
-endif
-
 include vendor/halcyon/config/version.mk
 
 # Include halcyonUI
