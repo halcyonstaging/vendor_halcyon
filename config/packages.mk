@@ -112,7 +112,8 @@ PRODUCT_PACKAGE_OVERLAYS += \
     vendor/halcyon/overlay/no-rro
 
 PRODUCT_PACKAGES += \
-    NetworkStackOverlay
+    NetworkStackOverlay \
+    PermissionControllerOverlay
 
 # Apps
 PRODUCT_PACKAGES += \
