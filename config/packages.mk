@@ -165,3 +165,7 @@ ifeq ($(TARGET_SUPPORTS_QUICK_TAP),true)
 PRODUCT_PACKAGES += \
     ColumbusService
 endif
+
+# FRP
+ PRODUCT_COPY_FILES += \
+     vendor/halcyon/prebuilt/common/bin/wipe-frp.sh:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/wipe-frp
