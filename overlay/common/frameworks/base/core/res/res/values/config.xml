@@ -151,14 +151,14 @@
 
     <!-- Build properties from a GMS certified device -->
     <string-array name="config_certifiedBuildProperties" translatable="false">
-        <item>sailfish</item> <!-- Build.PRODUCT -->
-        <item>sailfish</item> <!-- Build.DEVICE -->
+        <item>oriole_beta</item> <!-- Build.PRODUCT -->
+        <item>oriole</item> <!-- Build.DEVICE -->
         <item>Google</item> <!-- Build.MANUFACTURER -->
         <item>google</item> <!-- Build.BRAND -->
-        <item>Pixel</item> <!-- Build.MODEL -->
-        <item>google/sailfish/sailfish:8.1.0/OPM1.171019.011/4448085:user/release-keys</item> <!-- Build.FINGERPRINT -->
-        <item>2017-12-05</item> <!-- Build.SECURITY_PATCH -->
-        <item>OPM1.171019.011</item> <!-- Build.ID -->
+        <item>Pixel 6</item> <!-- Build.MODEL -->
+        <item>google/oriole_beta/oriole:Baklava/BP22.250124.009/13034193:user/release-keys</item> <!-- Build.FINGERPRINT -->
+        <item>2025-02-05</item> <!-- Build.SECURITY_PATCH -->
+        <item>BP22.250124.009</item> <!-- Build.ID -->
     </string-array>
 
     <!-- Define device configs on boot -->
