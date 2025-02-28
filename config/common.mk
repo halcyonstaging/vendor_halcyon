@@ -236,6 +236,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     messaging
 
+# ThemesStub
+PRODUCT_PACKAGES += \
+    ThemesStub
+
 # TextClassifier
 PRODUCT_PACKAGES += \
     libtextclassifier_annotator_en_model \
