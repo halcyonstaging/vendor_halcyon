@@ -228,6 +228,10 @@ PRODUCT_PACKAGES += \
     LMOFreeform \
     LMOFreeformSidebar
 
+# LatinIME
+PRODUCT_PACKAGES += \
+    LatinIME
+
 # Messaging
 PRODUCT_PACKAGES += \
     messaging
