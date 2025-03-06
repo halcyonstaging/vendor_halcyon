@@ -61,14 +61,6 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/halcyon/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.nfc.beam.xml
 
-# Enable SIP+VoIP on all targets
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.sip.voip.xml
-
-# Enable wireless Xbox 360 controller support
-PRODUCT_COPY_FILES += \
-    frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:$(TARGET_COPY_OUT_PRODUCT)/usr/keylayout/Vendor_045e_Product_0719.kl
-
 # Enforce privapp-permissions whitelist
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=enforce
@@ -97,166 +89,6 @@ endif
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true
 
-# SystemUI plugins
-PRODUCT_PACKAGES += \
-    QuickAccessWallet
-
-# Extra tools in Lineage
-PRODUCT_PACKAGES += \
-    bash \
-    curl \
-    getcap \
-    htop \
-    nano \
-    setcap \
-    vim
-
-PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
-    system/bin/curl \
-    system/bin/getcap \
-    system/bin/setcap
-
-# Filesystems tools
-PRODUCT_PACKAGES += \
-    fsck.ntfs \
-    mkfs.ntfs \
-    mount.ntfs
-
-PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
-    system/bin/fsck.ntfs \
-    system/bin/mkfs.ntfs \
-    system/bin/mount.ntfs \
-    system/%/libfuse-lite.so \
-    system/%/libntfs-3g.so
-
-# Openssh
-PRODUCT_PACKAGES += \
-    scp \
-    sftp \
-    ssh \
-    sshd \
-    sshd_config \
-    ssh-keygen \
-    start-ssh
-
-PRODUCT_COPY_FILES += \
-    vendor/halcyon/prebuilt/common/etc/init/init.openssh.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.openssh.rc
-
-# rsync
-PRODUCT_PACKAGES += \
-    rsync
-
-# Sensitive Phone Numbers list
-PRODUCT_COPY_FILES += \
-    vendor/halcyon/prebuilt/common/etc/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
-
-# World APN list
-PRODUCT_PACKAGES += \
-    apns-conf.xml
-
-# Tethering - allow without requiring a provisioning app
-# (for devices that check this)
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    net.tethering.noprovisioning=true
-
-# Storage manager
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.storage_manager.enabled=true
-
-# These packages are excluded from user builds
-PRODUCT_PACKAGES_DEBUG += \
-    procmem
-
-ifneq ($(TARGET_BUILD_VARIANT),user)
-PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
-    system/bin/procmem
-endif
-
-# Root
-PRODUCT_PACKAGES += \
-    adb_root
-ifneq ($(TARGET_BUILD_VARIANT),user)
-ifeq ($(WITH_SU),true)
-PRODUCT_PACKAGES += \
-    su
-endif
-endif
-
-# Parallel Space
-PRODUCT_PACKAGES += \
-    ParallelSpace
-
-# SystemUI
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI
-
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    dalvik.vm.systemuicompilerfilter=speed
-
-ifeq ($(TARGET_BUILD_VARIANT),userdebug)
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    debug.sf.enable_transaction_tracing=false
-endif
-
-PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/halcyon/overlay/common \
-    vendor/halcyon/overlay/no-rro
-
-PRODUCT_PACKAGES += \
-    NetworkStackOverlay
-
-# Apps
-PRODUCT_PACKAGES += \
-    Aperture \
-
-# AvatarPicker
-PRODUCT_PACKAGES += \
-    AvatarPicker
-
-# Face Unlock
-PRODUCT_PACKAGES += \
-    FaceUnlock
-
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    ro.face.sense_service=true
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
-
-# Freeform
-PRODUCT_PACKAGES += \
-    LMOFreeform \
-    LMOFreeformSidebar
-
-# LatinIME
-PRODUCT_PACKAGES += \
-    LatinIME
-
-# Messaging
-PRODUCT_PACKAGES += \
-    messaging
-
-# ThemesStub
-PRODUCT_PACKAGES += \
-    ThemesStub
-
-# TextClassifier
-PRODUCT_PACKAGES += \
-    libtextclassifier_annotator_en_model \
-    libtextclassifier_annotator_universal_model \
-    libtextclassifier_actions_suggestions_universal_model \
-    libtextclassifier_lang_id_model
-
-PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
-    system/etc/textclassifier/actions_suggestions.universal.model \
-    system/etc/textclassifier/lang_id.model \
-    system/etc/textclassifier/textclassifier.en.model \
-    system/etc/textclassifier/textclassifier.universal.model
-
-# Enable support of one-handed mode
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.support_one_handed_mode=true
-
 # ADB Secure
 ifeq ($(TARGET_BUILD_VARIANT),eng)
     # Disable ADB authentication
@@ -271,10 +103,6 @@ else
     PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.strictmode.disable=true
 endif
 
-# Lineage Health
-PRODUCT_COPY_FILES += \
-    vendor/halcyon/config/permissions/org.lineageos.health.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.lineageos.health.xml
-
 include vendor/halcyon/config/version.mk
 
 # Include halcyonUI
@@ -282,3 +110,6 @@ include vendor/halcyonui/config.mk
 
 # Include Halcyon Private Extras if available
 $(call inherit-product-if-exists, vendor/halcyon-priv/config.mk)
+
+# Include packages
+include vendor/halcyon/config/packages.mk
