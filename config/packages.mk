@@ -120,6 +120,7 @@ PRODUCT_PACKAGES += \
     AvatarPicker \
     LatinIME \
     messaging \
+    SetupWizard \
     ThemesStub
 
 # Face Unlock
