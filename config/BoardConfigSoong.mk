@@ -75,14 +75,6 @@ SOONG_CONFIG_NAMESPACES += halcyonNvidiaVars
 SOONG_CONFIG_halcyonNvidiaVars += \
     uses_nvidia_enhancements
 
-SOONG_CONFIG_NAMESPACES += halcyonQcomVars
-
-# Only create display_headers_namespace var if dealing with UM platforms to avoid breaking build for all other platforms
-ifneq ($(filter $(UM_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
-SOONG_CONFIG_halcyonQcomVars += \
-    qcom_display_headers_namespace
-endif
-
 # Soong bool variables
 SOONG_CONFIG_halcyonGlobalVars_camera_override_format_from_reserved := $(TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED)
 SOONG_CONFIG_halcyonGlobalVars_gralloc_handle_has_custom_content_md_reserved_size := $(TARGET_GRALLOC_HANDLE_HAS_CUSTOM_CONTENT_MD_RESERVED_SIZE)
@@ -151,8 +143,3 @@ SOONG_CONFIG_halcyonGlobalVars_target_health_charging_control_supports_bypass :=
 SOONG_CONFIG_halcyonGlobalVars_target_health_charging_control_supports_deadline := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_DEADLINE)
 SOONG_CONFIG_halcyonGlobalVars_target_health_charging_control_supports_limit := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_LIMIT)
 SOONG_CONFIG_halcyonGlobalVars_target_health_charging_control_supports_toggle := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE)
-ifneq ($(filter $(QSSI_SUPPORTED_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
-SOONG_CONFIG_halcyonQcomVars_qcom_display_headers_namespace := vendor/qcom/opensource/commonsys-intf/display
-else
-SOONG_CONFIG_halcyonQcomVars_qcom_display_headers_namespace := $(QCOM_SOONG_NAMESPACE)/display
-endif
