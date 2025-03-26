@@ -71,10 +71,6 @@ SOONG_CONFIG_halcyonGlobalVars += \
     target_health_charging_control_charging_path
 endif
 
-SOONG_CONFIG_NAMESPACES += halcyonNvidiaVars
-SOONG_CONFIG_halcyonNvidiaVars += \
-    uses_nvidia_enhancements
-
 # Soong bool variables
 SOONG_CONFIG_halcyonGlobalVars_camera_override_format_from_reserved := $(TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED)
 SOONG_CONFIG_halcyonGlobalVars_gralloc_handle_has_custom_content_md_reserved_size := $(TARGET_GRALLOC_HANDLE_HAS_CUSTOM_CONTENT_MD_RESERVED_SIZE)
@@ -93,7 +89,6 @@ SOONG_CONFIG_halcyonGlobalVars_gralloc_handle_has_reserved_size := $(TARGET_GRAL
 SOONG_CONFIG_halcyonGlobalVars_uses_egl_display_array := $(TARGET_USES_EGL_DISPLAY_ARRAY)
 SOONG_CONFIG_halcyonGlobalVars_needs_oplus_tag := $(TARGET_NEEDS_OPLUS_VENDOR_TAG)
 SOONG_CONFIG_halcyonGlobalVars_needs_camera_boottime := $(TARGET_CAMERA_BOOTTIME_TIMESTAMP)
-SOONG_CONFIG_halcyonNvidiaVars_uses_nvidia_enhancements := $(NV_ANDROID_FRAMEWORK_ENHANCEMENTS)
 SOONG_CONFIG_halcyonGlobalVars_uses_legacy_fd_fbdev := $(TARGET_USES_LEGACY_FD_FBDEV)
 
 # Set default values
