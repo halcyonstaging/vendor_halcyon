@@ -156,9 +156,9 @@
         <item>Google</item> <!-- Build.MANUFACTURER -->
         <item>google</item> <!-- Build.BRAND -->
         <item>Pixel 6</item> <!-- Build.MODEL -->
-        <item>google/oriole_beta/oriole:Baklava/BP22.250124.009/13034193:user/release-keys</item> <!-- Build.FINGERPRINT -->
-        <item>2025-02-05</item> <!-- Build.SECURITY_PATCH -->
-        <item>BP22.250124.009</item> <!-- Build.ID -->
+        <item>google/oriole_beta/oriole:16/BP22.250221.013/13218340:user/release-keys</item> <!-- Build.FINGERPRINT -->
+        <item>2025-03-05</item> <!-- Build.SECURITY_PATCH -->
+        <item>BP22.250221.013</item> <!-- Build.ID -->
     </string-array>
 
     <!-- Define device configs on boot -->
