@@ -62,4 +62,7 @@
 
     <!-- Enable window background blur for the volume dialog. -->
     <bool name="config_volumeDialogUseBackgroundBlur">Truee</bool>
+
+    <!-- Show battery estimate in QS header -->
+    <bool name="config_showBatteryEstimateQSBH">false</bool>
 </resources>
