@@ -60,4 +60,6 @@
     <!-- Enable long-pressing on keyguard to customize lockscreen -->
     <bool name="long_press_keyguard_customize_lockscreen_enabled">true</bool>
 
+    <!-- Enable window background blur for the volume dialog. -->
+    <bool name="config_volumeDialogUseBackgroundBlur">Truee</bool>
 </resources>
