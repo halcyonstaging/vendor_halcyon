@@ -5,9 +5,7 @@ PRODUCT_PACKAGES += \
 # Binaries
 PRODUCT_PACKAGES += \
     bash \
-    htop \
-    nano \
-	zstd
+    nano
 
 PRODUCT_PACKAGES += \
     nano_recovery
@@ -21,11 +19,6 @@ endif
 # Component overrides
 PRODUCT_PACKAGES += \
     halcyon-component-overrides.xml
-
-# Config
-PRODUCT_PACKAGES += \
-    SimpleDeviceConfig \
-    SimpleSettingsConfig
 
 # Credential storage
 PRODUCT_PACKAGES += \
@@ -52,24 +45,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGE_OVERLAYS += vendor/halcyon/overlay/dictionaries
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/halcyon/overlay/dictionaries
 
-# Launcher
-ifeq ($(PRODUCT_TYPE), go)
-PRODUCT_PACKAGES += \
-    Launcher3QuickStepGo
-
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    Launcher3QuickStepGo
-else
-PRODUCT_PACKAGES += \
-    Launcher3QuickStep
-
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    Launcher3QuickStep
-endif
-
-PRODUCT_PACKAGES += \
-    Launcher3Overlay
-
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/halcyon/overlay/no-rro
 PRODUCT_PACKAGE_OVERLAYS += \
@@ -90,33 +65,9 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/bin/procmem
 endif
 
-# Root
-PRODUCT_PACKAGES += \
-    adb_root
-ifneq ($(TARGET_BUILD_VARIANT),user)
-ifeq ($(WITH_SU),true)
-PRODUCT_PACKAGES += \
-    su
-
-PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
-    system/xbin/su
-endif
-endif
-
 # Sensitive Phone Numbers list
 PRODUCT_PACKAGES += \
     sensitive_pn.xml
-
-# SetupWizard
-PRODUCT_PACKAGES += \
-    Updater
-
-PRODUCT_COPY_FILES += \
-    vendor/halcyon/prebuilt/common/etc/init/init.halcyon-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.halcyon-updater.rc
-
-PRODUCT_PRODUCT_PROPERTIES += \
-    setupwizard.theme=glif_v4 \
-    setupwizard.feature.day_night_mode_enabled=true
 
 # SystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \
@@ -139,9 +90,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AvatarPicker \
     LatinIME \
-    Etar \
-    ExactCalculator \
     SetupWizard
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    setupwizard.theme=glif_v4 \
+    setupwizard.feature.day_night_mode_enabled=true
 
 # Telephony packages
 PRODUCT_PACKAGES += \
